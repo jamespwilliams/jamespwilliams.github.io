@@ -3,8 +3,10 @@
 	max-width: 100%;
 	word-break: break-all;
     white-space: normal;
+    padding-bottom: 0;
     /*font-size:20pt;*/
 }
+
 input { 
     text-align: center; 
 }
@@ -13,7 +15,7 @@ input {
   min-height: 100vh; /* These two lines are counted as one :-)       */
 
   display: flex;
-  align-items: center;
+  padding-top:20px;
 }
 .col-center{
   margin:0 auto;
