@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<title>Snapchat Rainbow Text</title>
+    <meta charset="utf-8"> 
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.0.4/jscolor.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+
+<body onload="">
+
+<div class="container container-table">
+    <div class="row vertical-center"> <!-- Additional class -->
+    	<div class="text-center col-md-4 col-md-offset-4 col-center">
+    		<h1>Snapchat Rainbow Text</h1>
+
+			<input type="text" placeholder="Enter text..." class="form-control" id="colorbox"></input>
+			<br/>
+			<input type="checkbox" name="rainbow" id="rainbowbox" style="margin-bottom: 10px;"> Make rainbow
+			<br/>
+			Font:
+			<select style="margin-bottom: 5px;" id="font">
+			  <option value="Helvetica">Helvetica</option>
+			  <option value="EuphemiaUCAS">EuphemiaUCAS</option>
+			  <option value="Cochina">Cochina</option>
+			  <option value="Copperplate">Copperplate</option>
+			  <option value="Damascus">Damascus</option>
+			  <option value="Farah">Farah</option>
+			  <option value="HelveticaNeue-UltraLight">HelveticaNeue-UltraLight</option>
+			  <option value="Zapfino">Zapfino</option>
+			</select>
+			<br/>
+
+			Font size: <input style="margin-bottom: 10px;" id="fsize" type="number" value="25" pattern="\d*"/></input>
+
+			<br/>
+			<button class="btn-primary" onclick="go()">
+			Go!</button>
+			<br/>
+			<p id="text"></p>
+		</div>
+	</div>
+</div>
+
+<script>
+// Disable scrolling.
+document.ontouchmove = function (e) {
+  e.preventDefault();
+}
+
+  function RGB2Color(r,g,b) {
+    return '#' + byte2Hex(r) + byte2Hex(g) + byte2Hex(b);
+  }
+
+  function byte2Hex(n) {
+    var nybHexString = "0123456789ABCDEF";
+    return String(nybHexString.substr((n >> 4) & 0x0F,1)) + nybHexString.substr(n & 0x0F,1);
+  }
+
+function go(){
+	
+
+	document.getElementById("text").innerHTML = "";
+	var str = document.getElementById('colorbox').value;
+	//var frequency = 2*Math.PI/str.length;
+	var frequency = 0.3;
+	document.getElementById('text').style.fontFamily = document.getElementById("font").value;
+	document.getElementById('text').style.fontSize = document.getElementById("fsize").value + "pt"; 
+	for (var i = 0, len = str.length; i < len; i++) {
+  		var size = 0;
+		red = green = blue = 0;
+		if (document.getElementById("rainbowbox").checked){
+			red   = Math.sin(frequency*i + 0) * 127 + 128;
+			green = Math.sin(frequency*i + 2) * 127 + 128;
+			blue  = Math.sin(frequency*i + 4) * 127 + 128;
+		}
+		
+		document.getElementById("text").innerHTML = document.getElementById("text").innerHTML + ('<font color="' + RGB2Color(red,green,blue) + '">' + str[i] + '</font>')
+	}
+}
+</script>
+
+</body>
+</html>
