@@ -162,7 +162,9 @@ function addMeters() {
     totalMeters = parseInt($("#meters").val());
   }
 
+  updateTotalLine();
   updateLine();
+
 }
 
 
@@ -172,8 +174,9 @@ function addStartMarkerClicked() {
     startMarker.setPosition({lat:map.getCenter().lat(), lng:map.getCenter().lng()});
     savePositionAsCookie("start", startMarker.getPosition());
 
-    updateLine();
     updateTotalLine();
+    updateLine();
+    
 }
 
 function addFinishMarkerClicked() {
@@ -181,21 +184,24 @@ function addFinishMarkerClicked() {
     finishMarker.setPosition({lat:map.getCenter().lat(), lng:map.getCenter().lng()});
     savePositionAsCookie("finish", finishMarker.getPosition());
 
-    updateLine();
     updateTotalLine();
+    updateLine();
+    
 }
 
 function resetMeters() {
   totalMeters = 0;
   createCookie("distance", 0);
   $("#met").text("0");
-  updateLine();
   updateTotalLine();
+  updateLine();
+  
 }
 
 function markerDragged() {
-  updateLine();
   updateTotalLine();
+  updateLine();
+  
 
 }
 
