@@ -22,7 +22,7 @@ function main() {
                 draggable:true,
                 position:null,
                 map: map,
-                icon: 'markers/green_markerA.png'
+                icon: 'markers/green_MarkerA.png'
         });
 
     sp = readPositionFromCookie("start");
@@ -45,7 +45,7 @@ function main() {
                 draggable:true,
                 position:null,
                 map: map,
-                icon: 'markers/green_markerB.png'
+                icon: 'markers/green_MarkerB.png'
         });
 
     fp = readPositionFromCookie("finish");
