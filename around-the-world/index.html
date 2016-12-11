@@ -1,0 +1,100 @@
+<html>
+<head>
+<title>Row Around The World</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6HGGHoBA0Gvp-xBshBn0vnxdh278EAyM&libraries=geometry"
+  type="text/javascript"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+<style type="text/css">
+	body{
+		margin:0;
+	}
+    #map {
+      width: 100%;
+      height: 100%;
+      z-index:0;
+    }
+   	#menu{
+ 
+   		
+   		position: absolute;
+   		top: 10px;
+   		right: 10px;
+   		z-index:1000;
+   		float:right;
+   	}
+   	.input-group {
+   		position:absolute;
+   		width:80%; !important
+   		min-width:80%;
+   		max-width:80%;
+
+   	}
+   	ul {
+
+   		list-style-type: none;
+   		padding:0;
+   		margin:5%;
+   	}
+
+   	li {
+   		width:90%;
+   		padding-left:5%;
+
+   		 padding-bottom:5px;
+   	}
+   	#meterstext{
+   		align:center ;
+   	}
+
+</style>
+
+<div id="map"></div>
+<div id="menu">
+
+<div class="panel-group">
+  <div class="panel panel-default">
+  	<div class="panel-heading">Row Around The World&nbsp; &nbsp;
+  		<a data-toggle="collapse" href="#collapse1"><span class="caret"></span></a>
+  	</div>
+    <div id="collapse1" class="panel-collapse collapse">
+    	<ul aria-labelledby="dropdownMenu1" id="menulist">
+		    <li><a href="#" onclick="addStartMarkerClicked();">Set Start</a></li>
+		    <li><a href="#" onclick="addFinishMarkerClicked();">Set Finish</a></li>
+		    <li><a href="#" onclick="resetMeters();">Reset Meters</a></li>
+		    
+		    <li role="separator" class="divider"></li>
+		    <li>
+		    	<div class="input-group">	
+		  			<input type="text" class="form-control" id="meters" placeholder="Enter meters">
+		  			<span class="input-group-btn"><button class="btn" type="button" onclick="addMeters();">Add</button></span>
+				</div>
+				
+			</li>
+			<li><br/></br></li>
+			<li><span href="#">Current meters: <span id="met">0</span></span></li>
+		 </ul>
+
+    </div>
+  </div>
+</div>
+
+</div>
+</body>
+<script src="main.js"></script>
+</html>
