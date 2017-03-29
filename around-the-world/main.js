@@ -14,6 +14,7 @@ function successFunction(position) {
 }
 function errorFunction() {
     initMap(0,0);
+    main();
 }
 
 function main() {
