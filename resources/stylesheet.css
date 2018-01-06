@@ -1,0 +1,70 @@
+.face-img{
+ width: 7.5em;
+ height: 7.5em;
+ background-image: url('face.jpg');
+ background-size: cover;
+ display: block;
+ border-radius: 100px;
+ -webkit-border-radius: 100px;
+ -moz-border-radius: 100px;
+ position: absolute;
+ right:2em;
+ top:2em;
+}
+
+article {
+	position: relative;
+}
+
+#main-github-icon {
+	margin-bottom:12px;
+	display:flex;
+	align-items: center;
+}
+
+.vert-container {
+	display:flex;
+	align-items: center;
+}
+
+#main-github-icon {
+	vertical-align: middle;
+}
+.no-bullet {
+	list-style-type: none; 
+}
+.top-level-ul {
+	padding-bottom:15px;
+}
+
+.vert-center {
+	vertical-align: middle;
+	margin-left: 10px;
+}
+
+.resume-link {
+	margin-left: 10px;
+}
+
+.footer-text {
+	width:100%;
+	text-align: center;
+	  color: gray;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+}
+
+#footer {
+	margin-bottom: 80px;!important
+}
+
+#footer a {
+  background: inherit;
+  color: gray;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+#footer a:hover {
+  text-decoration: underline;
+}
